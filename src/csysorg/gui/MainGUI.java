@@ -42,7 +42,7 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        connectionLabel = new javax.swing.JLabel();
         LED2 = new javax.swing.JLabel();
         LED1 = new javax.swing.JLabel();
         LED3 = new javax.swing.JLabel();
@@ -55,6 +55,7 @@ public class MainGUI extends javax.swing.JFrame {
         LED10 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jSlider14 = new javax.swing.JSlider(0,100);
+        jButton2 = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -69,11 +70,13 @@ public class MainGUI extends javax.swing.JFrame {
 
         jLabel1.setText("Power:");
 
+        jLabel2.setFont(new java.awt.Font("HelveticaNeueLT Std Med", 1, 14)); // NOI18N
         jLabel2.setText("OVERRIDE CONTROLS");
 
         jLabel3.setText("Status:");
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel4.setText("Not Connected");
+        connectionLabel.setText("Not Connected");
 
         imageIcon2 = new javax.swing.ImageIcon(getClass().getResource("led-off.png"));
         image2 = imageIcon2.getImage(); // transform it
@@ -202,6 +205,13 @@ public class MainGUI extends javax.swing.JFrame {
         jSlider14.setPaintTicks(true);
         jSlider14.setPaintLabels(true);
 
+        jButton2.setText("Connect");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -215,7 +225,7 @@ public class MainGUI extends javax.swing.JFrame {
                     .addComponent(LED3)
                     .addComponent(LED4)
                     .addComponent(LED5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(LED10)
@@ -232,11 +242,13 @@ public class MainGUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 279, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
                 .addComponent(jLabel3)
+                .addGap(29, 29, 29)
+                .addComponent(connectionLabel)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(40, 40, 40)
+                .addComponent(jButton2)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jToggleButton1)
@@ -255,7 +267,8 @@ public class MainGUI extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(connectionLabel)
+                    .addComponent(jButton2))
                 .addGap(2, 2, 2)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,16 +424,47 @@ public class MainGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_LED10MousePressed
 
-    private void OSWrite(String string){
-        try{
-            os.write(string.getBytes());
-            
-        } catch(Exception e){
-            e.printStackTrace();
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if (!isConnected) {
+            try {
+                streamConnection = (StreamConnection) Connector.open(hc05Url);
+                os = streamConnection.openOutputStream();
+                is = streamConnection.openInputStream();
+                connectionLabel.setText("Connected");
+                isConnected = true;
+                jButton2.setText("Disconnect");
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                connectionLabel.setText("Not Connected");
+                jButton2.setText("Reconnect");
+            }
+        } else if (isConnected) {
+            try {
+                os.close();
+                is.close();
+                streamConnection.close();
+                jButton2.setText("Connect");
+                connectionLabel.setText("Not Connected");
+                isConnected = false;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
         }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void OSWrite(String string) {
+        if (isConnected) {
+            try {
+                os.write(string.getBytes());
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
     }
-    
-    
+
     private boolean LEDPressed(JLabel label, boolean LEDstate) {
         if (this.isOn()) {
             if (LEDstate == false) {
@@ -464,17 +508,6 @@ public class MainGUI extends javax.swing.JFrame {
         LED10State = LEDPressed(LED10, true);
     }
 
-    public void connectionSetup() {
-        try {
-            streamConnection = (StreamConnection) Connector.open(hc05Url);
-            os = streamConnection.openOutputStream();
-            is = streamConnection.openInputStream();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-    
-
     /**
      * @param args the command line arguments
      */
@@ -508,10 +541,10 @@ public class MainGUI extends javax.swing.JFrame {
                 new MainGUI().setVisible(true);
             }
         });
-        
-        
+
     }
 
+    boolean isConnected = false;
     String hc05Url = "98D331F59D0E";
     StreamConnection streamConnection = null;
     OutputStream os = null;
@@ -544,11 +577,12 @@ public class MainGUI extends javax.swing.JFrame {
     private boolean LED8State = false;
     private javax.swing.JLabel LED9;
     private boolean LED9State = false;
+    private javax.swing.JLabel connectionLabel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSlider jSlider14;
