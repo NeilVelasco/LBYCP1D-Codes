@@ -5,6 +5,8 @@
  */
 package csysorg.gui;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Image;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -14,9 +16,12 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author NeilOliver
+ * @author NeilOliver & Groupmates
  */
 import javax.swing.JLabel;
+import javax.swing.JSlider;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class MainGUI extends javax.swing.JFrame {
 
@@ -25,6 +30,21 @@ public class MainGUI extends javax.swing.JFrame {
      */
     public MainGUI() {
         initComponents();
+        run();
+    }
+
+    public void run() {
+        sliderValue = jSlider1.getValue();
+        jSlider1.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+               JSlider source = (JSlider) e.getSource();
+               sliderValue = source.getValue();
+               OSWrite("");
+            }
+        });
+        
+        
     }
 
     /**
@@ -54,7 +74,7 @@ public class MainGUI extends javax.swing.JFrame {
         LED9 = new javax.swing.JLabel();
         LED10 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jSlider14 = new javax.swing.JSlider(0,100);
+        jSlider1 = new javax.swing.JSlider(0,100);
         jButton2 = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
@@ -62,6 +82,10 @@ public class MainGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jToggleButton1.setText("OFF");
+        jToggleButton1.setRolloverEnabled(true);
+        jToggleButton1.setMaximumSize(new Dimension(51,32));
+        jToggleButton1.setMinimumSize(new Dimension(51,32));
+        jToggleButton1.setBackground(Color.red);
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -76,6 +100,8 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel3.setText("Status:");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        connectionLabel.setMaximumSize(new Dimension(83,16));
+        connectionLabel.setMinimumSize(new Dimension(83,16));
         connectionLabel.setText("Not Connected");
 
         imageIcon2 = new javax.swing.ImageIcon(getClass().getResource("led-off.png"));
@@ -200,12 +226,15 @@ public class MainGUI extends javax.swing.JFrame {
 
         jLabel5.setText("Light Intensity");
 
-        jSlider14.setMajorTickSpacing(10);
-        jSlider14.setMinorTickSpacing(1);
-        jSlider14.setPaintTicks(true);
-        jSlider14.setPaintLabels(true);
+        jSlider1.setMajorTickSpacing(10);
+        jSlider1.setMinorTickSpacing(1);
+        jSlider1.setPaintTicks(true);
+        jSlider1.setPaintLabels(true);
+        jSlider1.setValue(50);
 
         jButton2.setText("Connect");
+        jButton2.setMaximumSize(new Dimension(77,32));
+        jButton2.setMinimumSize(new Dimension(77,32));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -225,7 +254,7 @@ public class MainGUI extends javax.swing.JFrame {
                     .addComponent(LED3)
                     .addComponent(LED4)
                     .addComponent(LED5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(LED10)
@@ -237,20 +266,20 @@ public class MainGUI extends javax.swing.JFrame {
                             .addComponent(LED8, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(LED9, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSlider14, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addComponent(connectionLabel)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(26, 26, 26)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(20, 20, 20)
                 .addComponent(jToggleButton1)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -276,7 +305,7 @@ public class MainGUI extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(jSlider14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -307,9 +336,11 @@ public class MainGUI extends javax.swing.JFrame {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         if (jToggleButton1.getText() == "OFF") {
             jToggleButton1.setText("ON");
+            jToggleButton1.setBackground(Color.green);
         } else if (jToggleButton1.getText() == "ON") {
             turnOff();
             jToggleButton1.setText("OFF");
+            jToggleButton1.setBackground(Color.red);
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -462,7 +493,18 @@ public class MainGUI extends javax.swing.JFrame {
                 e.printStackTrace();
             }
         }
-
+    }
+    
+    private int ISRead(){
+        if(isConnected) {
+            try{
+                int readString = is.read();
+                return readString;
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return 0;
     }
 
     private boolean LEDPressed(JLabel label, boolean LEDstate) {
@@ -585,7 +627,8 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSlider jSlider14;
+    private javax.swing.JSlider jSlider1;
+    int sliderValue;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 

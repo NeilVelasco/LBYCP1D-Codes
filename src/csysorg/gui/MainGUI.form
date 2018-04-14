@@ -40,7 +40,7 @@
                   <Component id="LED4" min="-2" max="-2" attributes="0"/>
                   <Component id="LED5" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="171" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="LED10" min="-2" max="-2" attributes="0"/>
@@ -54,7 +54,7 @@
                           <Component id="LED9" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jSlider14" min="-2" pref="230" max="-2" attributes="0"/>
+                      <Component id="jSlider1" min="-2" pref="230" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -62,16 +62,16 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="150" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="connectionLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Component id="jButton2" min="-2" pref="100" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Component id="jToggleButton1" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
@@ -100,7 +100,7 @@
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jSlider14" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSlider1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -139,10 +139,14 @@
     <Component class="javax.swing.JToggleButton" name="jToggleButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="OFF"/>
+        <Property name="rolloverEnabled" type="boolean" value="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jToggleButton1.setMaximumSize(new Dimension(51,32));&#xa;jToggleButton1.setMinimumSize(new Dimension(51,32));&#xa;jToggleButton1.setBackground(Color.red);"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
     </Component>
@@ -171,6 +175,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Not Connected"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="connectionLabel.setMaximumSize(new Dimension(83,16));&#xa;connectionLabel.setMinimumSize(new Dimension(83,16));"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="LED2">
       <Properties>
@@ -297,10 +304,11 @@
         <Property name="text" type="java.lang.String" value="Light Intensity"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JSlider" name="jSlider14">
+    <Component class="javax.swing.JSlider" name="jSlider1">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSlider(0,100)"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jSlider14.setMajorTickSpacing(10);&#xa;jSlider14.setMinorTickSpacing(1);&#xa;jSlider14.setPaintTicks(true);&#xa;jSlider14.setPaintLabels(true);"/>
+        <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="int sliderValue;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jSlider1.setMajorTickSpacing(10);&#xa;jSlider1.setMinorTickSpacing(1);&#xa;jSlider1.setPaintTicks(true);&#xa;jSlider1.setPaintLabels(true);&#xa;jSlider1.setValue(50);"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
@@ -310,6 +318,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jButton2.setMaximumSize(new Dimension(77,32));&#xa;jButton2.setMinimumSize(new Dimension(77,32));"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
