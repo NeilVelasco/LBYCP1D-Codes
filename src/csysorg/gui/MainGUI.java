@@ -230,6 +230,7 @@ public class MainGUI extends javax.swing.JFrame {
 
         connectionLabel.setMaximumSize(new Dimension(83,16));
         connectionLabel.setMinimumSize(new Dimension(83,16));
+        connectionLabel.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
         connectionLabel.setText("Not Connected");
 
         jButton2.setText("Connect");
