@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.4" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton1"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="LED2" min="-2" max="-2" attributes="0"/>
+                  <Component id="LED1" min="-2" max="-2" attributes="0"/>
+                  <Component id="LED3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LED4" min="-2" max="-2" attributes="0"/>
+                  <Component id="LED5" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="177" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="LED10" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="349" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="LED6" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="LED7" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="LED8" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="LED9" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jSlider14" min="-2" pref="230" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="279" max="32767" attributes="0"/>
+              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jToggleButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jSlider14" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="LED1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LED6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="LED2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LED7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="LED3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LED8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="LED4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LED9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="LED5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LED10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="OFF"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Power:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="OVERRIDE CONTROLS"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Status:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Not Connected"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LED2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="   LED2"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LED2MousePressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="private ImageIcon imageIcon2;&#xa;private Image image2;&#xa;private Image newimg2;&#xa;private boolean LED2State = false;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="imageIcon2 = new javax.swing.ImageIcon(getClass().getResource(&quot;led-off.png&quot;));&#xa;image2 = imageIcon2.getImage(); // transform it &#xa;newimg2 = image2.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  &#xa;imageIcon2 = new ImageIcon(newimg2);  // transform it back&#xa;LED2.setIcon(imageIcon2);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LED1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="   LED1"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LED1MousePressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="private ImageIcon imageIcon;&#xa;private Image image;&#xa;private Image newimg;&#xa;private boolean LED1State = false;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="imageIcon = new javax.swing.ImageIcon(getClass().getResource(&quot;led-off.png&quot;));&#xa;image = imageIcon.getImage(); // transform it &#xa;newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  &#xa;imageIcon = new ImageIcon(newimg);  // transform it back&#xa;LED1.setIcon(imageIcon);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LED3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="   LED3"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LED3MousePressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="private boolean LED3State = false;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="imageIcon = new javax.swing.ImageIcon(getClass().getResource(&quot;led-off.png&quot;));&#xa;image = imageIcon.getImage(); // transform it &#xa;newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  &#xa;imageIcon = new ImageIcon(newimg);  // transform it back&#xa;LED3.setIcon(imageIcon);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LED4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="   LED4"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LED4MousePressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="private boolean LED4State = false;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="imageIcon = new javax.swing.ImageIcon(getClass().getResource(&quot;led-off.png&quot;));&#xa;image = imageIcon.getImage(); // transform it &#xa;newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  &#xa;imageIcon = new ImageIcon(newimg);  // transform it back&#xa;LED4.setIcon(imageIcon);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LED5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="   LED5"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LED5MousePressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="private boolean LED5State = false;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="imageIcon = new javax.swing.ImageIcon(getClass().getResource(&quot;led-off.png&quot;));&#xa;image = imageIcon.getImage(); // transform it &#xa;newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  &#xa;imageIcon = new ImageIcon(newimg);  // transform it back&#xa;LED5.setIcon(imageIcon);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LED6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="   LED6"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LED6MousePressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="private boolean LED6State = false;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="imageIcon = new javax.swing.ImageIcon(getClass().getResource(&quot;led-off.png&quot;));&#xa;image = imageIcon.getImage(); // transform it &#xa;newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  &#xa;imageIcon = new ImageIcon(newimg);  // transform it back&#xa;LED6.setIcon(imageIcon);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LED7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="   LED7"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LED7MousePressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="private boolean LED7State = false;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="imageIcon = new javax.swing.ImageIcon(getClass().getResource(&quot;led-off.png&quot;));&#xa;image = imageIcon.getImage(); // transform it &#xa;newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  &#xa;imageIcon = new ImageIcon(newimg);  // transform it back&#xa;LED7.setIcon(imageIcon);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LED8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="   LED8"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LED8MousePressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="private boolean LED8State = false;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="imageIcon = new javax.swing.ImageIcon(getClass().getResource(&quot;led-off.png&quot;));&#xa;image = imageIcon.getImage(); // transform it &#xa;newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  &#xa;imageIcon = new ImageIcon(newimg);  // transform it back&#xa;LED8.setIcon(imageIcon);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LED9">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="   LED9"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LED9MousePressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="private boolean LED9State = false;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="imageIcon = new javax.swing.ImageIcon(getClass().getResource(&quot;led-off.png&quot;));&#xa;image = imageIcon.getImage(); // transform it &#xa;newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  &#xa;imageIcon = new ImageIcon(newimg);  // transform it back&#xa;LED9.setIcon(imageIcon);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LED10">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="   LED10"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LED10MousePressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_DeclarationPost" type="java.lang.String" value="private boolean LED10State = false;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="imageIcon = new javax.swing.ImageIcon(getClass().getResource(&quot;led-off.png&quot;));&#xa;image = imageIcon.getImage(); // transform it &#xa;newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  &#xa;imageIcon = new ImageIcon(newimg);  // transform it back&#xa;LED10.setIcon(imageIcon);"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Light Intensity"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSlider" name="jSlider14">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSlider(0,100)"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jSlider14.setMajorTickSpacing(10);&#xa;jSlider14.setMinorTickSpacing(1);&#xa;jSlider14.setPaintTicks(true);&#xa;jSlider14.setPaintLabels(true);"/>
+      </AuxValues>
+    </Component>
+  </SubComponents>
+</Form>
