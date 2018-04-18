@@ -19,7 +19,9 @@ import javax.swing.ImageIcon;
  * @author NeilOliver & Groupmates
  */
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JSlider;
+import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -79,6 +81,7 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jLabel4 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
         jSeparator1 = new javax.swing.JSeparator();
 
         jButton1.setText("jButton1");
@@ -228,8 +231,8 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel3.setText("Status:");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        connectionLabel.setMaximumSize(new Dimension(83,16));
-        connectionLabel.setMinimumSize(new Dimension(83,16));
+        connectionLabel.setMaximumSize(new Dimension(100,16));
+        connectionLabel.setMinimumSize(new Dimension(100,16));
         connectionLabel.setFont(new java.awt.Font("Dialog", 3, 12)); // NOI18N
         connectionLabel.setText("Not Connected");
 
@@ -258,6 +261,14 @@ public class MainGUI extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Montserrat", 3, 18)); // NOI18N
         jLabel4.setText("PROJECT:");
 
+        jCheckBox1.setText("Override  ");
+        jCheckBox1.setHorizontalTextPosition(SwingConstants.LEFT);
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
         panel1Layout.setHorizontalGroup(
@@ -267,11 +278,13 @@ public class MainGUI extends javax.swing.JFrame {
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
+                .addGap(26, 26, 26)
+                .addComponent(jCheckBox1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(connectionLabel)
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
@@ -290,7 +303,8 @@ public class MainGUI extends javax.swing.JFrame {
                             .addComponent(connectionLabel)
                             .addComponent(jButton2)
                             .addComponent(jLabel1)
-                            .addComponent(jToggleButton1)))
+                            .addComponent(jToggleButton1)
+                            .addComponent(jCheckBox1)))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel4)
@@ -335,7 +349,6 @@ public class MainGUI extends javax.swing.JFrame {
                 .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -362,7 +375,7 @@ public class MainGUI extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
                         .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         pack();
@@ -519,8 +532,18 @@ public class MainGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        if(jCheckBox1.isSelected() == true){
+            isOverride = true;
+            System.out.println("Override Activated");
+            JOptionPane.showMessageDialog(null, "Override is activated.");
+        } else isOverride = false;
+        
+        
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
     private void OSWrite(String string) {
-        if (isConnected) {
+        if (isConnected && isOverride) {
             try {
                 os.write(string.getBytes());
 
@@ -531,7 +554,7 @@ public class MainGUI extends javax.swing.JFrame {
     }
     
     private int ISRead(){
-        if(isConnected) {
+        if(isConnected && isOverride) {
             try{
                 int readString = is.read();
                 return readString;
@@ -626,6 +649,7 @@ public class MainGUI extends javax.swing.JFrame {
     StreamConnection streamConnection = null;
     OutputStream os = null;
     InputStream is = null;
+    boolean isOverride = false;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LED1;
@@ -657,6 +681,7 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JLabel connectionLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
